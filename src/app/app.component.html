@@ -1,0 +1,53 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">
+    <img src="/assets/images/amantya-logo.png" alt="">
+  </a>
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+     
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="list">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="add">Add Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="list">Employee List</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <!-- <a class="nav-link" routerLink="">Logout</a> -->
+        <img src="/assets/images/shutdown.png" style="width: 30px; height:30px;" routerLink="" (click)="logOut()">
+      </li>
+      </ul>
+      <!-- Notifications -->
+      <!-- Avatar -->
+      
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+

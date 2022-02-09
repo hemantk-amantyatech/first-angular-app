@@ -1,0 +1,38 @@
+<!-- <app-header></app-header> -->
+
+<h1>
+  Employee List
+  <!-- <mat-form-field>
+    <input matInput placeholder="filter">
+  </mat-form-field> -->
+</h1>
+<!-- <p><input type="text" #box (keyup)="applyFilter(box.value)" placeholder="search.." style="float: right;"></p> -->
+<div class="col-sm-12">  
+  <button (click)="exportexcel()" class="btn btn-success" style="font-size: 13px;">ExportTOExcel</button> 
+</div>  
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped"  id="excel-table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Location</th>
+        <th scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of datatodisplay">
+        <th>{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.location}}</td> 
+        <td><i (click)="deleteEmp(item.id)" class="fa fa-trash" style="font-size:20px;color:red;"></i>
+        <a routerLink="/update/{{item.id}}">
+          <i class="fa fa-edit" style="font-size:20px;color:blue;"></i>
+        </a>
+      </td>
+      </tr>
+    </tbody>
+  </table>

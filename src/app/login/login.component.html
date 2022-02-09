@@ -1,0 +1,49 @@
+<!-- <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong></strong>Invalid username or password
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div> -->
+  <p *ngIf="errorMessage" style="text-align: center;color: red;">{{errorMessage}}</p>
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form [formGroup]="logEmp" (ngSubmit)="loginEmp()" style="width: 23rem;">
+          <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form1Example13" class="form-control form-control-lg" formControlName="email"/>
+            <label class="form-label" for="form1Example13">Email address</label>
+          </div>
+          <div *ngIf="email && email.invalid && (email.dirty || email.touched)">
+
+            <div *ngIf="email.errors?.['required']" style="text-align: right;color: red;">
+              Email is required
+            </div>
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" id="form1Example23" class="form-control form-control-lg" formControlName="password"/>
+            <label class="form-label" for="form1Example23">Password</label>
+          </div>
+
+          <div *ngIf="password && password.invalid && (password.dirty || password.touched)">
+
+            <div *ngIf="password.errors?.['required']" style="text-align: right;color: red;">
+              Password is required
+            </div>
+          </div>
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+          <!-- <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p> -->
+              <p>Don't have an account? <a href="#!" class="link-info" routerLink="register">Register here</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
